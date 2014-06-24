@@ -7,19 +7,19 @@ import (
 )
 
 type Coordinates struct {
-  Lat  float64
-  Long float64
+  Lat  float64 `json:"latitude"`
+  Long float64 `json:"longitude"`
 }
 
 type Location struct {
-  ID bson.ObjectId `bson:"_id,omitempty"`
+  ID bson.ObjectId `bson:"_id,omitempty" json:"id"`
 
-  Name        string
-  Description string
+  Name        string `json:"name"`
+  Description string `json:"description"`
 
-  Visited bool
+  Visited bool `json:"visited"`
 
-  Coordinates Coordinates
+  Coordinates Coordinates `json:"coordinates"`
 
-  CreatedAt time.Time
+  CreatedAt time.Time `json:"createdAt"`
 }
